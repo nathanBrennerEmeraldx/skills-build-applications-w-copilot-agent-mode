@@ -29,6 +29,7 @@ router.register(r'leaderboard', LeaderboardViewSet)
 router.register(r'workouts', WorkoutViewSet)
 
 @api_view(['GET'])
+# codespace URL example: -8000.app.github.dev
 def api_root(request):
     codespace_name = os.environ.get('CODESPACE_NAME', 'localhost')
     base_url = f"https://{codespace_name}-8000.app.github.dev/" if codespace_name != 'localhost' else "http://localhost:8000/"
